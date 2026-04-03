@@ -1,0 +1,106 @@
+1. COMMON ACTIVITIES TABLE
+
+CREATE TABLE common_activities (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(500) NOT NULL,
+    points INT NOT NULL CHECK (points >= 0),
+    group_id INT NOT NULL CHECK (group_id IN (1,2,3)),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+2. SPORTS ACTIVITIES
+
+CREATE TABLE sports_activities (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(500) NOT NULL,
+    points INT NOT NULL CHECK (points >= 0),
+    group_id INT NOT NULL CHECK (group_id IN (1,2,3)),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+3. TECH ACTIVITIES
+
+CREATE TABLE tech_activities (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(500) NOT NULL,
+    points INT NOT NULL CHECK (points >= 0),
+    group_id INT NOT NULL CHECK (group_id IN (1,2,3)),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+
+INSERT INTO common_activities (title, points, group_id) VALUES
+('Publication in College Magazine: Articles, essays, poems, technical notes, or creative writing', 5, 1),
+('Four-wheeler License', 5, 1),
+('Blood Donation', 5, 1),
+('THRIVE Project Tribal Higher Education and Interactive Venture', 10, 1),
+('Tree Planting', 5, 1),
+('NSS Volunteer', 30, 1),
+('Swimming', 5, 1),
+('Fire Safety Training', 5, 1),
+
+('Conferences, Seminars, Webinars, Workshops, STTPs', 5, 2),
+('Class Representative', 5, 2),
+('Industrial Visit Coordinator', 5, 2),
+('College Magazine Editorial Board', 5, 2),
+('Short-Term Internship', 10, 2),
+('Clinical Exposure Training', 10, 2),
+
+('Industrial Visit', 5, 3),
+('Best Mini Project', 5, 3),
+('Best Project', 5, 3),
+('Best Seminar', 5, 3),
+('Long-Term Internship', 15, 3),
+('YIP – Young Innovators Programme', 5, 3);
+
+
+INSERT INTO sports_activities (title, points, group_id) VALUES
+('Sports/Games/A participation College Event', 1, 1),
+('Sports/Games/A participation Zonal level', 5, 1),
+('Sports/Games/A participation State level', 10, 1),
+('Sports/Games/A participation National Level', 20, 1),
+('Sports/Games/A College Participation International Level', 40, 1),
+
+('Sports/Games/Arts winner - Single Events College Level', 5, 1),
+('Sports/Games/Arts winner - Single Events Zonal Level', 10, 1),
+('Sports/Games/Arts winner - Single Events State Level', 20, 1),
+('Sports/Games/Arts winner - Single Events National Level', 40, 1),
+('Sports/Games/Arts winner - Single Event International Events', 40, 1),
+
+('Sports/Games/Arts winner - Group Events College Level', 3, 1),
+('Sports/Games/Arts winner - Group Events Zonal Level', 5, 1),
+('Sports/Games/Arts winner - Group Events State Level', 15, 1),
+('Sports/Games/Arts winner - Group Events National Level', 30, 1),
+('Sports/Games/Arts winner - Group Events international Event', 40, 1);
+
+
+
+
+INSERT INTO tech_activities (title, points, group_id) VALUES
+('Tech-Fest Participation College Level', 2, 2),
+('Tech-Fest Participation Zonal Level', 5, 2),
+('Tech-Fest Participation State Level', 10, 2),
+('Tech-Fest Participation National Level', 20, 2),
+('Tech-Fest Participation International Level', 30, 2),
+
+('Tech-Fest Winner College Level', 5, 2),
+('Tech-Fest Winner Zonal Level', 10, 2),
+('Tech-Fest Winner State Level', 20, 2),
+('Tech-Fest Winner National Level', 40, 2),
+('Tech-Fest Winner International Level', 40, 2),
+
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE) - Participation College Level', 2, 2),
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE, etc.) - Participation Zonal Level', 5, 2),
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE, etc.) - Participation State Level', 10, 2),
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE, etc.) - Participation National Level', 15, 2),
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE, etc.) - Participation International Level', 20, 2),
+
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE, etc.) - Winner College Level', 3, 2),
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE, etc.) - Winner Zonal Level', 7, 2),
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE, etc.) - Winner State Level', 15, 2),
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE, etc.) - Winner National Level', 25, 2),
+('Technical Competitions and Events Organized by Professional Societies (IEEE, IET, ASME, SAE, etc.) - Winner International Level', 35, 2);
